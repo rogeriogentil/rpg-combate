@@ -4,9 +4,7 @@ package dsoo.jogo.rpg.combate;
  *
  * @author Rogerio J. Gentil
  */
-public class Jogo {
+public interface Comando {
    
-   public static void main(String[] args) {
-      
-   }
+   void executar();
 }

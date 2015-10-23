@@ -1,6 +1,6 @@
 package dsso.jogo.rpg.modelo;
 
-import dsoo.jogo.rpg.modelo.Combate;
+import dsoo.jogo.rpg.combate.Arena;
 import dsoo.jogo.rpg.modelo.Personagem;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -16,13 +16,18 @@ public class ArenaTest {
    
    @Test
    public void devePosicionarPersonagemDentroDaArena() {
-      Combate combate = new Combate();
+      Arena arena = new Arena();
      
-      Personagem personagem = new Personagem();
-      combate.posicionar(personagem);
+      Personagem personagem = new Personagem("Rogerio");
+      arena.posicionar(personagem);
       
-      String[][] arena = combate.getArena();
+//      String[][] arena = combate.getArena();
       
-      assertEquals(combate, combate);
+      assertEquals(arena, arena);
+   }
+   
+   @Test
+   public void deveObterPosicaoValidaDoPersonagem() {
+      
    }
 }
