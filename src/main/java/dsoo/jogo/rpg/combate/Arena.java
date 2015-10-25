@@ -46,7 +46,7 @@ public class Arena {
    }
 
    public void posicionar(Personagem personagem) {
-      // setar posicao (x , y) do personagem
+       personagem.setPosicao(null);
    }
 
    public Coordenada obterPosicao(Personagem personagem) {

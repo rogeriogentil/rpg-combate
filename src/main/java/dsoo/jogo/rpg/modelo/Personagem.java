@@ -15,13 +15,25 @@ public class Personagem {
    private String nome;
    private int forca;
    private int percepcao;
-   private int despreza;
+   private int destreza;
    private int vitalidade;
    private int agilidade;
+   private int pontosDeVida;
    private Coordenada posicao;
 
    public Personagem(String nome) {
       this.nome = nome;
+   }
+   
+   public Personagem(String nome, int forca, int percepcao, int destreza, int vitalidade, int agilidade) {
+      this.nome = nome;
+      this.forca = forca;
+      this.percepcao = percepcao;
+      this.destreza = destreza;
+      this.vitalidade = vitalidade;
+      this.agilidade = agilidade;
+      this.pontosDeVida = vitalidade * 10;
+      
    }
    
    public String getNome() {
@@ -48,12 +60,12 @@ public class Personagem {
       this.percepcao = percepcao;
    }
 
-   public int getDespreza() {
-      return despreza;
+   public int getDestreza() {
+      return destreza;
    }
 
-   public void setDespreza(int despreza) {
-      this.despreza = despreza;
+   public void setDestreza(int destreza) {
+      this.destreza = destreza;
    }
 
    public int getVitalidade() {
@@ -72,6 +84,14 @@ public class Personagem {
       this.agilidade = agilidade;
    }
 
+    public int getPontosDeVida() {
+        return pontosDeVida;
+    }
+
+    public void setPontosDeVida(int pontosDeVida) {
+        this.pontosDeVida = pontosDeVida;
+    }
+
    public Coordenada getPosicao() {
       return posicao;
    }
@@ -81,9 +101,9 @@ public class Personagem {
    }
    
    public static List<Personagem> obterPersonagens() {
-      Personagem conrar = new Personagem("Conrar");
-      Personagem leofcon = new Personagem("Leofcon");
-      Personagem tonkim = new Personagem("Tonkim");
+      Personagem conrar = new Personagem("Conrar", 10, 3, 7, 7, 3);
+      Personagem leofcon = new Personagem("Leofcon", 3, 10, 7, 3, 7);
+      Personagem tonkim = new Personagem("Tonkim", 6, 6, 6, 6, 6);
       
       return Arrays.asList(conrar, leofcon, tonkim);
    }

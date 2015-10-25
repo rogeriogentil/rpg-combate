@@ -1,5 +1,8 @@
 package dsoo.jogo.rpg.modelo;
 
+import java.util.Random;
+
+
 /**
  *
  * @author Rogerio J. Gentil
@@ -12,6 +15,12 @@ public class Coordenada {
    public Coordenada(int x, int y) {
       this.x = x;
       this.y = y;
+   }
+   public Coordenada() {
+    Random randomGenerator = new Random();
+    //Gera um random de 0 .. 6;
+      this.x = randomGenerator.nextInt(7);
+      this.y = randomGenerator.nextInt(7);
    }
 
    public int getX() {
