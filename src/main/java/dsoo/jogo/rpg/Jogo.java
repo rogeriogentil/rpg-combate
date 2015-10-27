@@ -23,7 +23,7 @@ public class Jogo {
       jogo.iniciarCombate();
    }
 
-   public void iniciarJogo() {
+   private void iniciarJogo() {
       exibirMenuDoJogo();
       lerEntrada();
 
@@ -36,14 +36,14 @@ public class Jogo {
       executarAcaoDoMenuDoJogo(opcaoSelecionada);
    }
 
-   public void exibirMenuDoJogo() {
+   private void exibirMenuDoJogo() {
       System.out.println("Selecione uma opção:");
       System.out.println("1: Jogar");
       System.out.println("2: Sair");
       System.out.print("> ");
    }
 
-   public void executarAcaoDoMenuDoJogo(int opcao) {
+   private void executarAcaoDoMenuDoJogo(int opcao) {
       switch (opcao) {
          case 1: // Jogar
             partida = new Partida();
@@ -68,7 +68,7 @@ public class Jogo {
       controladorDaPartida.executarAcaoDoMenuDaPartida(opcaoSelecionada);
    }
 
-   public void selecionarPersonagem() {
+   private void selecionarPersonagem() {
       lerEntrada();
 
       while (opcaoSelecionada != 1 && opcaoSelecionada != 2 && opcaoSelecionada != 3) {
