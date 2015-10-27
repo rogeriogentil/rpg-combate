@@ -1,4 +1,4 @@
-package dsoo.jogo.rpg.combate;
+package dsoo.jogo.rpg.modelo;
 
 import dsoo.jogo.rpg.modelo.Coordenada;
 import dsoo.jogo.rpg.modelo.Personagem;

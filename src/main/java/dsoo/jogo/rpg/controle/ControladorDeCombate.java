@@ -1,6 +1,6 @@
 package dsoo.jogo.rpg.controle;
 
-import dsoo.jogo.rpg.combate.Arena;
+import dsoo.jogo.rpg.modelo.Arena;
 import dsoo.jogo.rpg.modelo.Personagem;
 import java.util.LinkedHashMap;
 import java.util.Map;

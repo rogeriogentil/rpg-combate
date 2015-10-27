@@ -1,6 +1,6 @@
 package dsso.jogo.rpg.modelo;
 
-import dsoo.jogo.rpg.combate.Arena;
+import dsoo.jogo.rpg.modelo.Arena;
 import dsoo.jogo.rpg.modelo.Personagem;
 import org.junit.Test;
 import static org.junit.Assert.*;
