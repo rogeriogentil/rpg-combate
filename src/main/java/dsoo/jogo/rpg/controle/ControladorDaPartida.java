@@ -14,7 +14,6 @@ public class ControladorDaPartida {
 
    private final Partida partida;
    private Map<Integer, Personagem> personagens;
-   private Personagem personagemSelecionado;
 
    public ControladorDaPartida(Partida partida) {
       this.partida = partida;
@@ -30,6 +29,7 @@ public class ControladorDaPartida {
       switch (opcao) {
          case 1:
             listarPersonagens();
+            break;
          case 2:
             Jogo.finalizarJogo();
       }
@@ -53,6 +53,11 @@ public class ControladorDaPartida {
    }
 
    public void selecionarPersonagem(int opcao) {
-      personagemSelecionado = personagens.get(opcao);
+      Personagem personagemSelecionado = personagens.get(--opcao);
+      partida.setPersonagem(personagemSelecionado);
+   }
+   
+   public Partida getPartida() {
+      return partida;
    }
 }

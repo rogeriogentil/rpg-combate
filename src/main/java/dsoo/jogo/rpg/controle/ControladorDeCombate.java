@@ -2,8 +2,6 @@ package dsoo.jogo.rpg.controle;
 
 import dsoo.jogo.rpg.modelo.Arena;
 import dsoo.jogo.rpg.modelo.Personagem;
-import java.util.LinkedHashMap;
-import java.util.Map;
 
 /**
  *
@@ -11,32 +9,24 @@ import java.util.Map;
  */
 public class ControladorDeCombate {
 
-   private Map<Integer, Personagem> personagens;
-   private Personagem jogador;
+   private Personagem personagemPrincipal;
    private Personagem oponente;
    private Arena arena;
    private boolean ehVezDoHumano;
-   
-   public void listarPersonagens() {
-      personagens = new LinkedHashMap<>();
-      int i = 0;
 
-      for (Personagem personagem : Personagem.obterPersonagens()) {
-         personagens.put(i++, personagem);
-         System.out.println(i + " - " + personagem.getNome() + "\n\t Forca: " + personagem.getForca() +"\t Percepcao: "+ personagem.getPercepcao() +" \t Destreza: "+ personagem.getDestreza() +"\t Vitalidade: "+ personagem.getVitalidade() +"\t Agilidade: "+ personagem.getAgilidade() );
-      }
+   public ControladorDeCombate(Personagem personagemSelecionado) {
+      this.personagemPrincipal = personagemSelecionado;
    }
-
-   public void iniciarCombate(int personagemSelecionado) {
-      jogador = personagens.get(--personagemSelecionado);
-      System.out.println("Você selecionou " + jogador.getNome());
+   
+   public void iniciarCombate() {
+      System.out.println("Você selecionou " + personagemPrincipal.getNome());
       
       ehVezDoHumano = ehVezDoJogadorHumano();
       criarOponente();
       criarArena();
       // criar equipamentos de ataque e defesa
       // equipar jogador e oponente
-      posicionarNaArena(jogador);
+      posicionarNaArena(personagemPrincipal);
       posicionarNaArena(oponente);
       exibirArena();
    }
@@ -49,7 +39,7 @@ public class ControladorDeCombate {
    */
    public void executarAcaoSelecionada(int opcao) {
       if (opcao == 1) {
-         jogador.atacar();
+         personagemPrincipal.atacar();
       }
    }
    //Acrededito que temos q passar o turno atual, afim de poder gerar dinamicamente/aleatoriamente os oponentes

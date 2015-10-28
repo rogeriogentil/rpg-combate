@@ -1,7 +1,5 @@
 package dsoo.jogo.rpg.modelo;
 
-import dsoo.jogo.rpg.modelo.Coordenada;
-import dsoo.jogo.rpg.modelo.Personagem;
 import java.util.ArrayList;
 import java.util.List;
 

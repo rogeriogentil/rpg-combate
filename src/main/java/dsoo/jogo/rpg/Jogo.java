@@ -1,7 +1,9 @@
 package dsoo.jogo.rpg;
 
 import dsoo.jogo.rpg.controle.ControladorDaPartida;
+import dsoo.jogo.rpg.controle.ControladorDeCombate;
 import dsoo.jogo.rpg.modelo.Partida;
+import dsoo.jogo.rpg.modelo.Personagem;
 import java.util.Scanner;
 
 /**
@@ -14,12 +16,12 @@ public class Jogo {
    private int opcaoSelecionada;
    private Partida partida;
    private ControladorDaPartida controladorDaPartida;
+   private ControladorDeCombate controladorDeCombate;
 
    public static void main(String[] args) {
       Jogo jogo = new Jogo();
       jogo.iniciarJogo();
       jogo.iniciarPartida();
-      jogo.selecionarPersonagem();
       jogo.iniciarCombate();
    }
 
@@ -66,11 +68,13 @@ public class Jogo {
       }
 
       controladorDaPartida.executarAcaoDoMenuDaPartida(opcaoSelecionada);
+      
+      selecionarPersonagem();
    }
 
    private void selecionarPersonagem() {
       lerEntrada();
-
+      
       while (opcaoSelecionada != 1 && opcaoSelecionada != 2 && opcaoSelecionada != 3) {
          exibirMensagemDeOpcaoInvalida();
          controladorDaPartida.listarPersonagens();
@@ -80,8 +84,10 @@ public class Jogo {
       controladorDaPartida.selecionarPersonagem(opcaoSelecionada);
    }
 
-   public void iniciarCombate() {
-
+   private void iniciarCombate() {
+      Personagem personagemSelecionado = controladorDaPartida.getPartida().getPersonagem();
+      controladorDeCombate = new ControladorDeCombate(personagemSelecionado);
+      controladorDeCombate.iniciarCombate();
    }
 
    private void lerEntrada() {
