@@ -13,16 +13,13 @@ import java.util.Scanner;
 public class Jogo {
 
    private static final Scanner sc = new Scanner(System.in);
-   private int opcaoSelecionada;
-   private Partida partida;
+   private int opcaoSelecionada;   
    private ControladorDaPartida controladorDaPartida;
    private ControladorDeCombate controladorDeCombate;
 
    public static void main(String[] args) {
       Jogo jogo = new Jogo();
       jogo.iniciarJogo();
-      jogo.iniciarPartida();
-      jogo.iniciarCombate();
    }
 
    private void iniciarJogo() {
@@ -48,15 +45,15 @@ public class Jogo {
    private void executarAcaoDoMenuDoJogo(int opcao) {
       switch (opcao) {
          case 1: // Jogar
-            partida = new Partida();
+            iniciarPartida();
             break;
          case 2: // Sair
             Jogo.finalizarJogo();
       }
    }
 
-   private void iniciarPartida() {
-      controladorDaPartida = new ControladorDaPartida(partida);
+   private void iniciarPartida() {      
+      controladorDaPartida = new ControladorDaPartida(new Partida());
 
       controladorDaPartida.exibirMenuDaPartida();
       lerEntrada();
@@ -82,6 +79,8 @@ public class Jogo {
       }
 
       controladorDaPartida.selecionarPersonagem(opcaoSelecionada);
+      
+      iniciarCombate();
    }
 
    private void iniciarCombate() {
