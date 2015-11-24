@@ -1,4 +1,4 @@
-package dsoo.jogo.rpg.modelo;
+package jogo.rpg.modelo;
 
 /**
  *

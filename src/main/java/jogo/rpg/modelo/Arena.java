@@ -1,4 +1,4 @@
-package dsoo.jogo.rpg.modelo;
+package jogo.rpg.modelo;
 
 import java.util.ArrayList;
 import java.util.List;

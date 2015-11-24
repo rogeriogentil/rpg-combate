@@ -1,8 +1,8 @@
-package dsoo.jogo.rpg.controle;
+package jogo.rpg.controle;
 
-import dsoo.jogo.rpg.Jogo;
-import dsoo.jogo.rpg.modelo.Partida;
-import dsoo.jogo.rpg.modelo.Personagem;
+import jogo.rpg.Jogo;
+import jogo.rpg.modelo.Partida;
+import jogo.rpg.modelo.Personagem;
 import java.util.LinkedHashMap;
 import java.util.Map;
 

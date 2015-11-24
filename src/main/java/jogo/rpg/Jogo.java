@@ -1,9 +1,9 @@
-package dsoo.jogo.rpg;
+package jogo.rpg;
 
-import dsoo.jogo.rpg.controle.ControladorDaPartida;
-import dsoo.jogo.rpg.controle.ControladorDeCombate;
-import dsoo.jogo.rpg.modelo.Partida;
-import dsoo.jogo.rpg.modelo.Personagem;
+import jogo.rpg.controle.ControladorDaPartida;
+import jogo.rpg.controle.ControladorDeCombate;
+import jogo.rpg.modelo.Partida;
+import jogo.rpg.modelo.Personagem;
 import java.util.Scanner;
 
 /**

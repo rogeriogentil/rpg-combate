@@ -1,4 +1,4 @@
-package dsoo.jogo.rpg.combate;
+package jogo.rpg.controle;
 
 /**
  *

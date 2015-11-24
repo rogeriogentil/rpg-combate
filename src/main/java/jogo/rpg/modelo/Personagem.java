@@ -1,7 +1,7 @@
-package dsoo.jogo.rpg.modelo;
+package jogo.rpg.modelo;
 
-import dsoo.jogo.rpg.combate.Comando;
-import dsoo.jogo.rpg.combate.ComandoAtacar;
+import jogo.rpg.controle.Comando;
+import jogo.rpg.controle.ComandoAtacar;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;

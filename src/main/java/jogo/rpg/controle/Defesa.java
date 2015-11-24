@@ -1,6 +1,6 @@
-package dsoo.jogo.rpg.combate;
+package jogo.rpg.controle;
 
-import dsoo.jogo.rpg.modelo.Personagem;
+import jogo.rpg.modelo.Personagem;
 
 /**
  *

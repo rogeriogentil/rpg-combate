@@ -1,7 +1,7 @@
-package dsoo.jogo.rpg.controle;
+package jogo.rpg.controle;
 
-import dsoo.jogo.rpg.modelo.Arena;
-import dsoo.jogo.rpg.modelo.Personagem;
+import jogo.rpg.modelo.Arena;
+import jogo.rpg.modelo.Personagem;
 
 /**
  *
