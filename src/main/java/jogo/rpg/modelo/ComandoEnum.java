@@ -1,15 +1,14 @@
 package jogo.rpg.modelo;
 
+/**
+ * Tipos de comandos possíveis.
+ * 
+ * @see jogo.rpg.modelo.ComandoFactory
+ * 
+ * @author Rodrigo Henrique Ramos <rodrigohenrique.ramos@gmail.com>
+ */
 public enum ComandoEnum {
 
-   ;
-
-   private String ATACAR;
-
-   private String MOVER;
-
-   private String DEFENDER;
-
-   private String ESQUIVAR;
+   ATACAR, MOVER, DEFENDER, ESQUIVAR;
 
 }
