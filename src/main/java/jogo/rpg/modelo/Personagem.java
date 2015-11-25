@@ -3,14 +3,13 @@ package jogo.rpg.modelo;
 import jogo.rpg.controle.Comando;
 import jogo.rpg.controle.ComandoAtacar;
 import java.util.Arrays;
-import java.util.LinkedList;
 import java.util.List;
 
 /**
  *
- * @author rogerio
+ * @author Rogerio J. Gentil <rogerio_gentil@yahoo.com.br>
  */
-public class Personagem {
+public class Personagem implements IPersonagem {
 
    private String nome;
    private int forca;
@@ -111,5 +110,35 @@ public class Personagem {
    public void atacar() {
       Comando atacar = new ComandoAtacar(this);
       atacar.executar();
+   }
+
+   @Override
+   public void equipar(EquipamentoAtaque ataque, EquipamentoDefesa defesa) {
+      throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+   }
+
+   @Override
+   public void reduzPontosDeVida(int dano) {
+      throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+   }
+
+   @Override
+   public String exibirInforPersonagem() {
+      throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+   }
+
+   @Override
+   public void posicionar(int x, int y) {
+      throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+   }
+
+   @Override
+   public int getPosicaoX() {
+      throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+   }
+
+   @Override
+   public int getPosicaoY() {
+      throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
    }
 }
