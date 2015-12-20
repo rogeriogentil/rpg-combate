@@ -1,10 +1,13 @@
 package jogo.rpg;
 
+import java.util.HashSet;
 import jogo.rpg.controle.ControladorDaPartida;
 import jogo.rpg.controle.ControladorDeCombate;
 import jogo.rpg.modelo.Partida;
 import jogo.rpg.modelo.Personagem;
 import java.util.Scanner;
+import java.util.Set;
+import jogo.rpg.controle.OpcaoDeJogoEnum;
 
 /**
  *
@@ -13,20 +16,22 @@ import java.util.Scanner;
 public class Jogo {
 
    private static final Scanner sc = new Scanner(System.in);
-   private int opcaoSelecionada;   
+   private Set<Integer> opcoes;
+   private int opcaoSelecionada;
    private ControladorDaPartida controladorDaPartida;
    private ControladorDeCombate controladorDeCombate;
-
+   
    public static void main(String[] args) {
       Jogo jogo = new Jogo();
       jogo.iniciarJogo();
    }
 
    private void iniciarJogo() {
+      obterOpcoesDoJogo();
       exibirMenuDoJogo();
       lerEntrada();
 
-      while (opcaoSelecionada != 1 && opcaoSelecionada != 2) {
+      while (!opcoes.contains(opcaoSelecionada)) {
          exibirMensagemDeOpcaoInvalida();
          exibirMenuDoJogo();
          lerEntrada();
@@ -35,10 +40,24 @@ public class Jogo {
       executarAcaoDoMenuDoJogo(opcaoSelecionada);
    }
 
+   /**
+    * Obtém as opções pré-definidas de Jogo.
+    */
+   private void obterOpcoesDoJogo() {
+      opcoes = new HashSet<>();
+
+      for (OpcaoDeJogoEnum opcao : OpcaoDeJogoEnum.values()) {
+         opcoes.add(opcao.getId());
+      }
+   }
+
    private void exibirMenuDoJogo() {
       System.out.println("Selecione uma opção:");
-      System.out.println("1: Jogar");
-      System.out.println("2: Sair");
+
+      for (OpcaoDeJogoEnum opcao : OpcaoDeJogoEnum.values()) {
+         System.out.println(opcao.getId() + ": " + opcao.getOpcao());
+      }
+
       System.out.print("> ");
    }
 
@@ -52,7 +71,7 @@ public class Jogo {
       }
    }
 
-   private void iniciarPartida() {      
+   private void iniciarPartida() {
       controladorDaPartida = new ControladorDaPartida(new Partida());
 
       controladorDaPartida.exibirMenuDaPartida();
@@ -65,13 +84,13 @@ public class Jogo {
       }
 
       controladorDaPartida.executarAcaoDoMenuDaPartida(opcaoSelecionada);
-      
+
       selecionarPersonagem();
    }
 
    private void selecionarPersonagem() {
       lerEntrada();
-      
+
       while (opcaoSelecionada != 1 && opcaoSelecionada != 2 && opcaoSelecionada != 3) {
          exibirMensagemDeOpcaoInvalida();
          controladorDaPartida.listarPersonagens();
@@ -79,7 +98,7 @@ public class Jogo {
       }
 
       controladorDaPartida.selecionarPersonagem(opcaoSelecionada);
-      
+
       iniciarCombate();
    }
 
